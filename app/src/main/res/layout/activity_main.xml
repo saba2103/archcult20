@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainactivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/darkGray"
+    app:layout_behavior="com.example.MoveUpwardBehavior"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/aclight"
+        android:transitionName="splash_activity_transition"
+        app:layout_constraintTop_toTopOf="@+id/mainactivity"
+        tools:ignore="UnusedAttribute"></ImageView>
+    <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M  I  R  A  G  E"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintLeft_toLeftOf="@+id/logo"
+            app:layout_constraintRight_toRightOf="@+id/logo"></TextView>
+    -->
+    <TextView
+        android:id="@+id/miragetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M I R A G E"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/mainactivity"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"
+        app:layout_constraintTop_toBottomOf="@+id/logo"></TextView>
+
+    <Button
+        android:id="@+id/schedulebutton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:elevation="24dp"
+        android:text="schedule"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/mainactivity"
+        app:layout_constraintRight_toRightOf="@+id/mainactivity"
+        app:layout_constraintTop_toBottomOf="@+id/miragetext"></Button>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:divider="@null"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="@id/mainactivity"
+        app:layout_constraintTop_toBottomOf="@+id/schedulebutton"></ListView>
+
+    <Button
+        android:id="@+id/menubutton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:elevation="24dp"
+        android:text="m e n u"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainactivity"
+        app:layout_constraintLeft_toLeftOf="@+id/mainactivity"
+        app:layout_constraintRight_toRightOf="@+id/mainactivity"></Button>
+
+
+
+    <!--
+        <include layout="@layout/content_activity_main" />
+    -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

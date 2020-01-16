@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/darkGray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/closebutton"
+            android:src="@drawable/ic_close_white_24dp"
+            android:padding="24dp"></ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stallstext"
+            android:text="stalls"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:layout_margin="20dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gltext"
+            android:text="guest lectures"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:layout_margin="20dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/wstext"
+            android:text="workshops"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:layout_margin="20dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comptext"
+            android:text="competitions"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:layout_margin="20dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventstext"
+            android:text="events"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:layout_margin="20dp"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:src="@drawable/archcultlight"
+                android:layout_gravity="bottom"></ImageView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

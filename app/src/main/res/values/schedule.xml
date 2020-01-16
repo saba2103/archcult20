@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="schedule">
+        <item>alpha</item>
+        <item>beta</item>
+        <item>gamma</item>
+        <item>delta</item>
+        <item>alpha</item>
+        <item>beta</item>
+        <item>gamma</item>
+        <item>delta</item>
+        <item>alpha</item>
+        <item>beta</item>
+        <item>gamma</item>
+        <item>delta</item>
+        <item>alpha</item>
+        <item>beta</item>
+        <item>gamma</item>
+        <item>delta</item>
+    </string-array>
+</resources>

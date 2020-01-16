@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainactivity"
+    android:background="@color/darkGray"
+    android:layout_gravity="center_horizontal">
+
+    <!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M  I  R  A  G  E"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintLeft_toLeftOf="@+id/logo"
+        app:layout_constraintRight_toRightOf="@+id/logo"></TextView>
+-->
+    <TextView
+        android:id="@+id/miragetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M I R A G E"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/mainactivity"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"
+        app:layout_constraintTop_toBottomOf="@+id/logo"></TextView>
+
+    <Button
+        android:id="@+id/menubutton"
+        style="@style/AppTheme.RoundedCornerMaterialButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:elevation="24dp"
+        android:text="m e n u"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainactivity"
+        app:layout_constraintLeft_toLeftOf="@+id/mainactivity"
+        app:layout_constraintRight_toRightOf="@+id/mainactivity"></Button>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#0C0C0C</color>
+    <color name="colorAccent">#D81B60</color>
+    
+<!--    <color name="darkGray">#202125</color>-->
+<!--    <color name="lightGray">#37383c</color>-->
+<!--    <color name="lightGray">#35363a</color>-->
+    <color name="lightGray">#202125</color>
+
+    <color name="darkGray">#0C0C0C</color>
+    <color name="midGray">#151515</color>
+
+</resources>
