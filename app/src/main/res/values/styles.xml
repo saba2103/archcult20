@@ -12,4 +12,11 @@
         <item name="android:background">@drawable/rounded_shape</item>
     </style>
 
+    <style name="AppTheme.RoundedCornerMaterialButtonActive" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/active_button</item>
+    </style>
+    <style name="AppTheme.RoundedCornerMaterialButtonNonActive" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/nonactive_button</item>
+    </style>
+
 </resources>

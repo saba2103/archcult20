@@ -1,12 +1,15 @@
 package com.example.archcult20;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -18,16 +21,12 @@ import com.example.archcult20.Fragments.ScheduleDay2;
 import com.example.archcult20.Fragments.ScheduleDay3;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
 
 public class ScheduleActivity extends AppCompatActivity {
 
-    private ViewPager pager;
-    private PagerAdapter pagerAdapter;
-
-    LinearLayout sliderDotspanel;
-    private int dotsCount;
-    private ImageView[] dots;
+//    LinearLayout sliderDotspanel;
+//    private int dotsCount;
+//    private ImageView[] dots;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,24 +41,46 @@ public class ScheduleActivity extends AppCompatActivity {
         list.add(new ScheduleDay2());
         list.add(new ScheduleDay3());
 
-        pager = findViewById(R.id.pager);
-        pagerAdapter = new SchedulePagerAdapter(getSupportFragmentManager(), list);
+        ViewPager pager = findViewById(R.id.pager);
+        PagerAdapter pagerAdapter = new SchedulePagerAdapter(getSupportFragmentManager(), list);
 
         pager.setAdapter(pagerAdapter);
 
-        sliderDotspanel = findViewById(R.id.sliderDots);
-        dotsCount = pagerAdapter.getCount();
-        dots = new ImageView[dotsCount];
+//        sliderDotspanel = findViewById(R.id.sliderDots);
+//        dotsCount = pagerAdapter.getCount();
+//        dots = new ImageView[dotsCount];
 
-        for(int i=0; i<dotsCount; i++){
-            dots[i] = new ImageView(this);
-            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(8, 0, 8, 0);
-            sliderDotspanel.addView(dots[i], params);
+        final int daysCount = pagerAdapter.getCount();
+
+        final Button[] daysbutton = new Button[pagerAdapter.getCount()];
+        daysbutton[0] = findViewById(R.id.day1button);
+        daysbutton[1] = findViewById(R.id.day2button);
+        daysbutton[2] = findViewById(R.id.day3button);
+
+        Typeface Opificio_light = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_light.ttf");
+        Typeface Opificio_regular = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_regular.ttf");
+        Typeface Opificio_bold = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_Bold.ttf");
+
+        for(int i=0; i<daysCount; i++){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                daysbutton[i].setBackground(ContextCompat.getDrawable(getBaseContext(), R.drawable.nonactive_button));
+            }
+            daysbutton[i].setTypeface(Opificio_bold);
         }
 
-        dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            daysbutton[0].setBackground(ContextCompat.getDrawable(getBaseContext(), R.drawable.active_button));
+        }
+
+//        for(int i=0; i<dotsCount; i++){
+//            dots[i] = new ImageView(this);
+//            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
+//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+//            params.setMargins(8, 0, 8, 0);
+//            sliderDotspanel.addView(dots[i], params);
+//        }
+
+        //dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
 
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -69,11 +90,23 @@ public class ScheduleActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                /*
                 for(int i=0; i<dotsCount; i++){
                     dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
                 }
 
                 dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
+                */
+
+                for(int i=0; i<daysCount; i++){
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        daysbutton[i].setBackground(ContextCompat.getDrawable(getBaseContext(), R.drawable.nonactive_button));
+                    }
+                }
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    daysbutton[position].setBackground(ContextCompat.getDrawable(getBaseContext(), R.drawable.active_button));
+                }
             }
 
             @Override

@@ -15,7 +15,7 @@ import org.w3c.dom.Text;
 import java.text.NumberFormat;
 import java.util.List;
 
-class ScheduleListAdapter extends ArrayAdapter<Schedule> {
+public class ScheduleListAdapter extends ArrayAdapter<Schedule> {
 
     private List<Schedule> schedules;
 

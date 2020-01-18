@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        final View view = findViewById(R.id.mainactivity);
-
         TextView tv = findViewById(R.id.miragetext);
         tv.setText("M   I   R   A   G   E");
 
