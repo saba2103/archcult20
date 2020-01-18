@@ -1,5 +1,6 @@
 package com.example.archcult20;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -45,5 +46,14 @@ public class MainMenu extends AppCompatActivity {
                 MainMenu.this.finish();
             }
         });
+
+        stallstext.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent menuintent = new Intent(MainMenu.this,ScheduleActivity.class);
+                                              MainMenu.this.startActivity(menuintent);
+                                          }
+                                      }
+        );
     }
 }

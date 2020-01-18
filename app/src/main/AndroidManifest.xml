@@ -19,6 +19,7 @@
 
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".MainMenu"></activity>
+        <activity android:name=".ScheduleActivity"></activity>
         <activity android:name=".Schedule"></activity>
         <activity android:name=".ScheduleData"></activity>
         <activity android:name=".ScheduleListAdapter"></activity>
