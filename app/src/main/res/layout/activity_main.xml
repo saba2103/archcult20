@@ -56,7 +56,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/mainactivity"
         app:layout_constraintRight_toRightOf="@+id/mainactivity"
         app:layout_constraintTop_toBottomOf="@+id/miragetext"></Button>
-
+<!--
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="@id/mainactivity"
         app:layout_constraintTop_toBottomOf="@+id/schedulebutton"></ListView>
-
+-->
     <Button
         android:id="@+id/menubutton"
         style="@style/AppTheme.RoundedCornerMaterialButton"

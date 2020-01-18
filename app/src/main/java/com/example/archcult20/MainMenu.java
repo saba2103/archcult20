@@ -46,14 +46,5 @@ public class MainMenu extends AppCompatActivity {
                 MainMenu.this.finish();
             }
         });
-
-        stallstext.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-                                              Intent menuintent = new Intent(MainMenu.this,ScheduleActivity.class);
-                                              MainMenu.this.startActivity(menuintent);
-                                          }
-                                      }
-        );
     }
 }

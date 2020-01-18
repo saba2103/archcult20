@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.archcult20.Fragments.ScheduleDay1;
+
 import org.w3c.dom.Text;
 
 import java.text.NumberFormat;

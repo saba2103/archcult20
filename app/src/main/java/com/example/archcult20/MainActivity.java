@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     //androidx.constraintlayout.widget.ConstraintLayout mainactivitylayout = findViewById(R.id.mainactivity);
 
-    private List<Schedule> schedules = ScheduleData.scheduleList;
+//    private List<Schedule> schedules = ScheduleData.scheduleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +58,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        String[] items = getResources().getStringArray(R.array.schedule);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, items);
-        ScheduleListAdapter adapter = new ScheduleListAdapter(this,R.layout.schedule_item,schedules);
-        ListView lv = findViewById(R.id.listView);
-        lv.setAdapter(adapter);
+
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent menuintent = new Intent(MainActivity.this,ScheduleActivity.class);
+                                              MainActivity.this.startActivity(menuintent);
+                                          }
+                                      }
+        );
+
+//        String[] items = getResources().getStringArray(R.array.schedule);
+//        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, items);
+//        ScheduleListAdapter adapter = new ScheduleListAdapter(this,R.layout.schedule_item,schedules);
+//        ListView lv = findViewById(R.id.listView);
+//        lv.setAdapter(adapter);
 
 //        TextView titleText = findViewById(R.id.titletext);
 //        TextView typeText = findViewById(R.id.typetext);

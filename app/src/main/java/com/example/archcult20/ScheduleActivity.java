@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -19,6 +21,9 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.archcult20.Fragments.ScheduleDay1;
 import com.example.archcult20.Fragments.ScheduleDay2;
 import com.example.archcult20.Fragments.ScheduleDay3;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +51,14 @@ public class ScheduleActivity extends AppCompatActivity {
 
         pager.setAdapter(pagerAdapter);
 
+        ImageView backbutton = findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScheduleActivity.this.finish();
+            }
+        });
+
 //        sliderDotspanel = findViewById(R.id.sliderDots);
 //        dotsCount = pagerAdapter.getCount();
 //        dots = new ImageView[dotsCount];
@@ -60,6 +73,9 @@ public class ScheduleActivity extends AppCompatActivity {
         Typeface Opificio_light = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_light.ttf");
         Typeface Opificio_regular = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_regular.ttf");
         Typeface Opificio_bold = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_Bold.ttf");
+
+        TextView layouttitle = findViewById(R.id.layouttitle);
+        layouttitle.setTypeface(Opificio_bold);
 
         for(int i=0; i<daysCount; i++){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
