@@ -2,12 +2,17 @@ package com.example.archcult20;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,23 +24,30 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.archcult20.Fragments.Campus;
+import com.example.archcult20.Fragments.DeptFF;
+import com.example.archcult20.Fragments.DeptGF;
+import com.example.archcult20.Fragments.DeptSF;
+import com.example.archcult20.Fragments.ScheduleDay1;
+import com.example.archcult20.Fragments.ScheduleDay2;
+import com.example.archcult20.Fragments.ScheduleDay3;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-//    androidx.constraintlayout.widget.ConstraintLayout mainactivitylayout = findViewById(R.id.mainactivity);
-
 //    private List<Schedule> schedules = ScheduleData.scheduleList;
 
     public static final String SCH_ID = "SCH_ID";
+    public static final String SCH_TYPE_ID = "SCH_TYPE_ID";
     int count;
 
     Dialog popup;
-    TextView popupvenue,popupday1,popupday2,popupday3,popupempty;
-    View titledivider,day1line1,day1line2,day2line1,day2line2,day3line1,day3line2;
-    LinearLayout day1layout,day2layout,day3layout,popupdialog;
+    TextView popupvenue, popupday1, popupday2, popupday3, popupempty;
+    View titledivider, day1line1, day1line2, day2line1, day2line2, day3line1, day3line2;
+    LinearLayout day1layout, day2layout, day3layout, popupdialog;
 
     LinearLayout list1;
 
@@ -44,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        Intent dataintent = new Intent(MainActivity.this,ScheduleData.class);
-//        MainActivity.this.startActivity(dataintent);
-
-        Log.d("MainActivity", "This is a test message");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -64,11 +71,6 @@ public class MainActivity extends AppCompatActivity {
         Typeface Opificio_regular = Typeface.createFromAsset(getAssets(), "fonts/Opificio_regular.ttf");
         Typeface Opificio_bold = Typeface.createFromAsset(getAssets(), "fonts/Opificio_Bold.ttf");
         tv.setTypeface(Opificio_regular);
-
-//        popupvenue = popup.findViewById(R.id.popupvenue);
-//        popupvenue.setTypeface(Opificio_bold);
-//        popupday1 = popup.findViewById(R.id.popupday1);
-//        popupday1.setTypeface(Opificio_light);
 
         Button scheduleButton = findViewById(R.id.schedulebutton);
         scheduleButton.setTypeface(Opificio_bold);
@@ -120,12 +122,73 @@ public class MainActivity extends AppCompatActivity {
 //        TextView dayText = convertView.findViewById(R.id.daytext);
 //        dayText.setText(getDayText);
 
-        TextView floor = findViewById(R.id.floor);
+        final TextView floor = findViewById(R.id.floor);
         floor.setTypeface(Opificio_regular);
 
-        TextView location = findViewById(R.id.location);
+        final TextView location = findViewById(R.id.location);
         location.setTypeface(Opificio_bold);
 
+
+        List<Fragment> list = new ArrayList<>();
+        list.add(new Campus());
+        list.add(new DeptGF());
+        list.add(new DeptFF());
+        list.add(new DeptSF());
+
+        final ViewPager pager = findViewById(R.id.pager);
+        final PagerAdapter pagerAdapter = new MapPagerAdapter(getSupportFragmentManager(), list);
+        pager.setAdapter(pagerAdapter);
+
+        final int pagerCount = pagerAdapter.getCount();
+
+        pager.setCurrentItem(1);
+
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 0) {
+                    floor.setText("campus");
+                    location.setText("national institute of technology, trichy");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        location.setLetterSpacing((float) 0.025);
+                    }
+                } else if (position == 1) {
+                    floor.setText("ground floor");
+                    location.setText("department of architecture");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        location.setLetterSpacing((float) 0.1);
+                    }
+                } else if (position == 2) {
+                    floor.setText("first floor");
+                    location.setText("department of architecture");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        location.setLetterSpacing((float) 0.1);
+                    }
+                } else if (position == 3) {
+                    floor.setText("second floor");
+                    location.setText("department of architecture");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        location.setLetterSpacing((float) 0.1);
+                    }
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
+
+
+
+
+
+
+/*
         View dgf_courtyard = findViewById(R.id.dgf_courtyard);
         dgf_courtyard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -246,6 +309,69 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(v, "Ladies Toilet", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
             }
         });
+ */
+
+
+        TextView gltext = findViewById(R.id.gltext);
+        TextView wstext = findViewById(R.id.wstext);
+        TextView cotext = findViewById(R.id.cotext);
+        TextView fetext = findViewById(R.id.fetext);
+        TextView ietext = findViewById(R.id.ietext);
+        TextView sttext = findViewById(R.id.sttext);
+
+        gltext.setTypeface(Opificio_regular);
+        wstext.setTypeface(Opificio_regular);
+        cotext.setTypeface(Opificio_regular);
+        ietext.setTypeface(Opificio_regular);
+        fetext.setTypeface(Opificio_regular);
+        sttext.setTypeface(Opificio_regular);
+
+        Button guestlectures = findViewById(R.id.guestlectures);
+        Button workshops = findViewById(R.id.workshops);
+        Button competitions = findViewById(R.id.competitions);
+        Button informalevents = findViewById(R.id.informalevents);
+        Button formalevents = findViewById(R.id.formalevents);
+        Button stalls = findViewById(R.id.stalls);
+
+        guestlectures.setTypeface(Opificio_bold);
+        workshops.setTypeface(Opificio_bold);
+        competitions.setTypeface(Opificio_bold);
+        informalevents.setTypeface(Opificio_bold);
+        formalevents.setTypeface(Opificio_bold);
+        stalls.setTypeface(Opificio_bold);
+
+        guestlectures.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SortedSchedule.class);
+                intent.putExtra(SCH_TYPE_ID, "Guest Lecture");
+                startActivity(intent);
+            }
+        });
+        workshops.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SortedSchedule.class);
+                intent.putExtra(SCH_TYPE_ID, "Workshop");
+                startActivity(intent);
+            }
+        });
+        formalevents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SortedSchedule.class);
+                intent.putExtra(SCH_TYPE_ID, "Formal Event");
+                startActivity(intent);
+            }
+        });
+        informalevents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SortedSchedule.class);
+                intent.putExtra(SCH_TYPE_ID, "Informal Event");
+                startActivity(intent);
+            }
+        });
     }
 
     public void venuePopUp(String venue) {
@@ -312,21 +438,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-/*
-        ShapeDrawable sb = (ShapeDrawable) lv1.getBackground();
-        sb.getPaint().setColor(color);
 
-        final LayoutInflater factory = getLayoutInflater();
-        final View listitemview = factory.inflate(R.layout.schedule_item2, null);
-        LinearLayout listitem2bg = (LinearLayout) listitemview.findViewById(R.id.listitem2bg);
-        listitem2bg.setBackgroundColor(Color.BLUE);
-
-        //View v;
-        for (int i = 0; i < lv1.getChildCount(); i++) {
-            //v = lv1.getAdapter().getView(i, null, null);
-            lv1.getChildAt(i).setBackgroundColor(Color.BLUE);
-        }
-*/
         UIUtils.setListViewHeightBasedOnItems(lv1);
         UIUtils.setListViewHeightBasedOnItems(lv2);
         UIUtils.setListViewHeightBasedOnItems(lv3);
@@ -350,28 +462,19 @@ public class MainActivity extends AppCompatActivity {
         popupempty.setTypeface(Opificio_regular);
 
         if (schedules1.isEmpty()) {
-//            popupday1.setVisibility(View.GONE);
-//            day1line1.setVisibility(View.GONE);
-//            day1line2.setVisibility(View.GONE);
             lv1.setVisibility(View.GONE);
             day1layout.setVisibility(View.GONE);
         }
         if (schedules2.isEmpty()) {
-//            popupday2.setVisibility(View.GONE);
-//            day2line1.setVisibility(View.GONE);
-//            day2line2.setVisibility(View.GONE);
             lv2.setVisibility(View.GONE);
             day2layout.setVisibility(View.GONE);
         }
         if (schedules3.isEmpty()) {
-//            popupday3.setVisibility(View.GONE);
-//            day3line1.setVisibility(View.GONE);
-//            day3line2.setVisibility(View.GONE);
             lv3.setVisibility(View.GONE);
             day3layout.setVisibility(View.GONE);
         }
 
-        if (schedules1.isEmpty() && schedules2.isEmpty() && schedules3.isEmpty()){
+        if (schedules1.isEmpty() && schedules2.isEmpty() && schedules3.isEmpty()) {
             titledivider.setVisibility(View.VISIBLE);
             popupempty.setVisibility(View.VISIBLE);
         }
@@ -389,10 +492,10 @@ public class MainActivity extends AppCompatActivity {
 
         count = lv1.getAdapter().getCount() + lv2.getAdapter().getCount() + lv3.getAdapter().getCount();
 
-        if(count > 3) {
-            lp.height = (int)(getResources().getDisplayMetrics().heightPixels*0.75);
+        if (count > 3) {
+            lp.height = (int) (getResources().getDisplayMetrics().heightPixels * 0.75);
             popup.getWindow().setAttributes(lp);
-            count=0;
+            count = 0;
         }
 
         popup.setCanceledOnTouchOutside(true);

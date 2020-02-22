@@ -111,10 +111,28 @@ public final class ScheduleData{
         scheduleMap.put(title, item);
     }
 
-    public static List<Schedule> getCategoryList(String typeString) {
+    public static List<Schedule> getCategoryListDay1(String typeString) {
         List<Schedule> typeList = new ArrayList<>();
         for (Schedule schedule : scheduleList) {
-            if (schedule.getType().contains(typeString)) {
+            if (schedule.getType().contains(typeString) && schedule.getDay() == 1 ) {
+                typeList.add(schedule);
+            }
+        }
+        return typeList;
+    }
+    public static List<Schedule> getCategoryListDay2(String typeString) {
+        List<Schedule> typeList = new ArrayList<>();
+        for (Schedule schedule : scheduleList) {
+            if (schedule.getType().contains(typeString) && schedule.getDay() == 2 ) {
+                typeList.add(schedule);
+            }
+        }
+        return typeList;
+    }
+    public static List<Schedule> getCategoryListDay3(String typeString) {
+        List<Schedule> typeList = new ArrayList<>();
+        for (Schedule schedule : scheduleList) {
+            if (schedule.getType().contains(typeString) && schedule.getDay() == 3 ) {
                 typeList.add(schedule);
             }
         }

@@ -47,6 +47,7 @@
         <activity android:name=".ScheduleListAdapter" />
         <activity android:name=".TextList" />
         <activity android:name=".DetailActivity"/>
+        <activity android:name=".SortedSchedule"/>
     </application>
 
 </manifest>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainactivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/darkGray"
+    app:layout_behavior="com.example.MoveUpwardBehavior"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/dgf_gents"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_stairsb"
+        app:layout_constraintTop_toTopOf="@+id/dgf_stairsb"></View>
+
+    <View
+        android:id="@+id/dgf_ladies"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        app:layout_constraintLeft_toRightOf="@+id/dgf_stairsb"
+        app:layout_constraintTop_toTopOf="@+id/dgf_stairsb"></View>
+
+    <View
+        android:id="@+id/dgf_stairsb"
+        android:layout_width="15dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/dgf_lobbyb"
+        app:layout_constraintLeft_toLeftOf="@id/mainactivity"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"></View>
+
+    <View
+        android:id="@+id/dgf_stairsm"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintLeft_toLeftOf="@id/mainactivity"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"
+        app:layout_constraintTop_toBottomOf="@+id/dgf_courtyard"></View>
+
+    <View
+        android:id="@+id/dgf_stairsf"
+        android:layout_width="15dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dgf_lobbyf"
+        app:layout_constraintLeft_toRightOf="@+id/dgf_lobbyf"></View>
+
+    <View
+        android:id="@+id/dgf_lobbyf"
+        android:layout_width="40dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="@id/mainactivity"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"
+        app:layout_constraintTop_toBottomOf="@+id/dgf_courtyard"></View>
+
+    <View
+        android:id="@+id/dgf_lobbyb"
+        android:layout_width="40dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/dgf_courtyard"
+        app:layout_constraintLeft_toLeftOf="@id/mainactivity"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"></View>
+
+    <View
+        android:id="@+id/dgf_courtyard"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainactivity"
+        app:layout_constraintLeft_toLeftOf="@id/mainactivity"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"
+        app:layout_constraintTop_toTopOf="@+id/mainactivity"></View>
+
+    <View
+        android:id="@+id/dgf_studio3"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="25dp"
+        android:rotation="45"
+        app:layout_constraintBottom_toTopOf="@+id/dgf_studio2"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_courtyard"></View>
+
+    <View
+        android:id="@+id/dgf_studio2"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainactivity"
+        app:layout_constraintLeft_toLeftOf="@id/mainactivity"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_courtyard"
+        app:layout_constraintTop_toTopOf="@+id/mainactivity"></View>
+
+    <View
+        android:id="@+id/dgf_studio1"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="35dp"
+        android:rotation="-45"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_courtyard"
+        app:layout_constraintTop_toBottomOf="@+id/dgf_studio2"></View>
+
+    <View
+        android:id="@+id/dgf_studio4"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="25dp"
+        android:rotation="-45"
+        app:layout_constraintBottom_toTopOf="@+id/dgf_studio5"
+        app:layout_constraintLeft_toRightOf="@+id/dgf_courtyard"></View>
+
+    <View
+        android:id="@+id/dgf_studio5"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainactivity"
+        app:layout_constraintLeft_toRightOf="@+id/dgf_courtyard"
+        app:layout_constraintRight_toRightOf="@id/mainactivity"
+        app:layout_constraintTop_toTopOf="@+id/mainactivity"></View>
+
+    <View
+        android:id="@+id/dgf_complab"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="35dp"
+        android:rotation="45"
+        app:layout_constraintLeft_toRightOf="@+id/dgf_courtyard"
+        app:layout_constraintTop_toBottomOf="@+id/dgf_studio5"></View>
+
+    <ImageView
+        android:id="@+id/dept"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_margin="32dp"
+        android:src="@drawable/dept_gf"
+        app:layout_constraintBottom_toBottomOf="@id/mainactivity"
+        app:layout_constraintTop_toTopOf="@id/mainactivity"></ImageView>
+</androidx.constraintlayout.widget.ConstraintLayout>

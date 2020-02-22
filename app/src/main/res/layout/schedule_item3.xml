@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/listitem_shape"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp"
+            android:paddingTop="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/titletext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Title"
+                android:textColor="#fff"
+                android:textSize="24dp"></TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/venuetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/timetext"
+                android:layout_alignParentLeft="true"
+                android:text="Dept Courtyard"
+                android:textColor="#fff"
+                android:textSize="16dp"></TextView>
+            <!--
+                        <com.example.archcult20.UnderlinedTextView
+                            android:id="@+id/typetext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/timetext"
+                            android:layout_alignParentLeft="true"
+                            android:text="Guest Lecture"
+                            android:textColor="#fff"
+                            app:underlineColor="#ffc112ef"
+                            app:underlineWidth="1dp"/>
+
+                                    <com.example.archcult20.UnderlinedTextView
+                                        android:id="@+id/tvTest"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginRight="20dp"
+                                        android:gravity="center"
+                                        android:text="This is a demo text"
+                                        android:textSize="16sp"
+                                        app:underlineColor="#ffc112ef"
+                                        app:underlineWidth="3dp"/>
+
+
+                                                <TextView
+                                                    android:id="@+id/daytext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentRight="true"
+                                                    android:text="Day 1"></TextView>
+                                    -->
+            <TextView
+                android:id="@+id/timetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="5 PM"
+                android:textColor="#fff"
+                android:textSize="16dp"></TextView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
