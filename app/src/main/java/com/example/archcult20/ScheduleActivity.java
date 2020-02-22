@@ -1,11 +1,13 @@
 package com.example.archcult20;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,6 +18,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.example.archcult20.Fragments.ScheduleDay1;
@@ -38,24 +41,37 @@ public class ScheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
         List<Fragment> list = new ArrayList<>();
         list.add(new ScheduleDay1());
         list.add(new ScheduleDay2());
         list.add(new ScheduleDay3());
 
-        ViewPager pager = findViewById(R.id.pager);
-        PagerAdapter pagerAdapter = new SchedulePagerAdapter(getSupportFragmentManager(), list);
+        final ViewPager pager = findViewById(R.id.pager);
+        final PagerAdapter pagerAdapter = new SchedulePagerAdapter(getSupportFragmentManager(), list);
 
+//        final Intent dataintent = new Intent(ScheduleActivity.this,ScheduleData.class);
+//        ScheduleActivity.this.startActivity(dataintent);
         pager.setAdapter(pagerAdapter);
+
+//        final SwipeRefreshLayout pullToRefresh = findViewById(R.id.pulltorefresh);
+//        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                ScheduleActivity.this.startActivity(dataintent);
+//                pager.getAdapter().notifyDataSetChanged();
+//                pullToRefresh.setRefreshing(false);
+//            }
+//        });
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         ImageView backbutton = findViewById(R.id.backbutton);
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ScheduleActivity.this.finish();
+                overridePendingTransition(R.anim.nothing, R.anim.bottom_down);
             }
         });
 
@@ -69,6 +85,16 @@ public class ScheduleActivity extends AppCompatActivity {
         daysbutton[0] = findViewById(R.id.day1button);
         daysbutton[1] = findViewById(R.id.day2button);
         daysbutton[2] = findViewById(R.id.day3button);
+
+        for (int i=0; i<daysCount; i++){
+            final int finalI = i;
+            daysbutton[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    pager.setCurrentItem(finalI);
+                }
+            });
+        }
 
         Typeface Opificio_light = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_light.ttf");
         Typeface Opificio_regular = Typeface.createFromAsset(getAssets(),  "fonts/Opificio_regular.ttf");
@@ -127,8 +153,14 @@ public class ScheduleActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.nothing, R.anim.bottom_down);
     }
 }

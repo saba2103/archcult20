@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkGray"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/dgf_courtyard"
+        android:src="@drawable/dgf_courtyard"
+        app:layout_constraintBottom_toBottomOf="@+id/layout"
+        app:layout_constraintTop_toTopOf="@+id/layout"
+        app:layout_constraintLeft_toLeftOf="@id/layout"
+        app:layout_constraintRight_toRightOf="@id/layout"></ImageView>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/dgf_studio1"
+        android:src="@drawable/dgf_studio1"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toRightOf="@id/dgf_studio2"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_courtyard"
+        app:layout_constraintTop_toBottomOf="@id/dgf_studio2"></ImageView>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/dgf_studio2"
+        android:src="@drawable/dgf_studio2"
+        android:layout_marginRight="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout"
+        app:layout_constraintTop_toTopOf="@+id/layout"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_courtyard"></ImageView>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/dgf_studio3"
+        android:src="@drawable/dgf_studio3"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toRightOf="@id/dgf_studio2"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_courtyard"
+        app:layout_constraintBottom_toTopOf="@id/dgf_studio2"></ImageView>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/dgf_complab"
+        android:src="@drawable/dgf_complab"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintLeft_toRightOf="@id/dgf_courtyard"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_studio5"
+        app:layout_constraintTop_toBottomOf="@id/dgf_studio5"></ImageView>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/dgf_studio5"
+        android:src="@drawable/dgf_studio5"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout"
+        app:layout_constraintTop_toTopOf="@+id/layout"
+        app:layout_constraintLeft_toRightOf="@+id/dgf_courtyard"></ImageView>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/dgf_studio4"
+        android:src="@drawable/dgf_studio4"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintLeft_toRightOf="@id/dgf_courtyard"
+        app:layout_constraintRight_toLeftOf="@+id/dgf_studio5"
+        app:layout_constraintBottom_toTopOf="@id/dgf_studio5"></ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

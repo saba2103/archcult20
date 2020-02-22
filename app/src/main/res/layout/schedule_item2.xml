@@ -12,6 +12,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/listitem_shape"
+        android:id="@+id/listitem2bg"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -31,16 +32,6 @@
                 android:text="Title"
                 android:textColor="#fff"
                 android:textSize="24dp"></TextView>
-
-            <TextView
-                android:id="@+id/venuetext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/titletext"
-                android:layout_alignParentRight="true"
-                android:text="Dept Coutyard"
-                android:textColor="#fff"
-                android:textSize="16dp"></TextView>
 
         </RelativeLayout>
 

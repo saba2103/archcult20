@@ -77,6 +77,16 @@
             android:textSize="40sp"
             android:layout_margin="20dp"></TextView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/maptext"
+            android:text="map"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:layout_margin="20dp"></TextView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

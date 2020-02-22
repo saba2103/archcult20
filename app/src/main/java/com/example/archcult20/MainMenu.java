@@ -32,12 +32,14 @@ public class MainMenu extends AppCompatActivity {
         TextView wstext = findViewById(R.id.wstext);
         TextView comptext = findViewById(R.id.comptext);
         TextView eventstext = findViewById(R.id.eventstext);
+        TextView maptext = findViewById(R.id.maptext);
 
         stallstext.setTypeface(Opificio_bold);
         gltext.setTypeface(Opificio_bold);
         wstext.setTypeface(Opificio_bold);
         comptext.setTypeface(Opificio_bold);
         eventstext.setTypeface(Opificio_bold);
+        maptext.setTypeface(Opificio_bold);
 
         ImageView closebutton = findViewById(R.id.closebutton);
         closebutton.setOnClickListener(new View.OnClickListener() {
@@ -46,5 +48,23 @@ public class MainMenu extends AppCompatActivity {
                 MainMenu.this.finish();
             }
         });
+
+//        stallstext.setOnClickListener(new View.OnClickListener() {
+//                                              @Override
+//                                              public void onClick(View v) {
+//                                                  Intent menuintent = new Intent(MainMenu.this,ItemListActivity.class);
+//                                                  MainMenu.this.startActivity(menuintent);
+//                                              }
+//                                          }
+//        );
+
+        maptext.setOnClickListener(new View.OnClickListener() {
+                                              @Override
+                                              public void onClick(View v) {
+                                                  Intent mapintent = new Intent(MainMenu.this,ArchcultMap.class);
+                                                  MainMenu.this.startActivity(mapintent);
+                                              }
+                                          }
+        );
     }
 }

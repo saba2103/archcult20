@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/popupdialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/darkGray"
+            android:orientation="vertical"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/darkGray"
+            android:elevation="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/popupvenue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="venue"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/titledivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="16dp"
+                android:background="#40ffffff"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/day1layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/day1line1"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="#40ffffff"/>
+
+                    <TextView
+                        android:id="@+id/popupday1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="day1"
+                        android:textAlignment="center"
+                        android:textColor="#fff"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:id="@+id/day1line2"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="#40ffffff"/>
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:divider="@null"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbars="none"/>
+
+                <LinearLayout
+                    android:id="@+id/day2layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/day2line1"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="#40ffffff"/>
+
+                    <TextView
+                        android:id="@+id/popupday2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="day2"
+                        android:textAlignment="center"
+                        android:textColor="#fff"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:id="@+id/day2line2"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="#40ffffff"/>
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:divider="@null"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbars="none"/>
+
+                <LinearLayout
+                    android:id="@+id/day3layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/day3line1"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="#40ffffff"/>
+
+                    <TextView
+                        android:id="@+id/popupday3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="day3"
+                        android:textAlignment="center"
+                        android:textColor="#fff"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:id="@+id/day3line2"
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="#40ffffff"/>
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:divider="@null"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbars="none"/>
+
+                <TextView
+                    android:id="@+id/popupempty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginBottom="48dp"
+                    android:lineSpacingExtra="10dp"
+                    android:text="Nothing happening here! :("
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/closebutton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="top|right"
+        android:background="@drawable/circle_shape"
+        android:src="@drawable/ic_close_black_24dp"
+        android:layout_marginRight="24dp"
+        android:padding="4dp"/>
+
+</FrameLayout>

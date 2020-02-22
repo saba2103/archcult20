@@ -49,7 +49,10 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
                 Intent mainIntent = new Intent(SplashScreen.this, MainActivity.class);
+                SplashScreen.this.startActivity(mainIntent);
+                SplashScreen.this.finish();
 
+                /*
                 ActivityOptionsCompat options = ActivityOptionsCompat.
                         makeSceneTransitionAnimation(SplashScreen.this,
                                 splashlogo,
@@ -66,7 +69,11 @@ public class SplashScreen extends AppCompatActivity {
                     SplashScreen.this.finish();
                 }
                 //SplashScreen.this.finish();
+
+                 */
             }
+
+
         }, SPLASH_DISPLAY_LENGTH);
     }
 
